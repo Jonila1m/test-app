@@ -10,9 +10,8 @@ body{
 
 h1{
     font-size: 1.5rem;
-    padding-top: 2rem;
-    padding-bottom: 1rem;
-    text-align: center;
+    padding:0;
+    text-align: center; 
 
 }
 
@@ -21,7 +20,7 @@ h1{
     top:0;
     width:20rem;
     height: 100vh;
-    padding:2.5rem;
+    padding:1.5rem 2.5rem;
     background-color: rgb(23,22,50);
     color:white;
     line-height: 2rem;
@@ -47,6 +46,11 @@ ul {
     border-left: 4px solid transparent;
 
 }
+
+.list-item.active{
+    background-color: rgb(53, 52, 76);
+}
+
 .list-item:hover {
   background: rgb(53, 52, 76);
   border-radius: 2px;

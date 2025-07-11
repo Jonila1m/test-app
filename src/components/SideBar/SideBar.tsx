@@ -13,7 +13,7 @@ const SideBar = ({ selectedChallenge, setSelectedChallenge }: TProps) => {
             <ul>
                 {challenges.map(challenge => {
                     return (
-                        <li className={`list-item${challenge.id === selectedChallenge.id ? ' active' : ''}`}
+                        <li className={`list-item ${challenge.id === selectedChallenge.id ? 'active' : ''}`}
                             key={challenge.id}
                             onClick={() => setSelectedChallenge(challenge)}
                         >

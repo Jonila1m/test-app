@@ -50,7 +50,8 @@ export const challenges: TChallenge[] = [
   {
     id: "parantheses",
     title: "Valid Parenthesis",
-    description: "Write a program that prints numbers from 1 to 100...",
+    description:
+      "Write a program that given a string s containing just the characters '(', ')', '{', '}', '[' and ']', determine if the input string is valid.  An input string is valid if: Open brackets must be closed by the same type of brackets. Open brackets must be closed in the correct order.",
     solutionPath: "/src/challenges/parantheses.ts",
     testPath: "/src/challenges/parantheses.test.ts",
   },
