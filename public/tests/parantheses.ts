@@ -1,12 +1,12 @@
 export const isValid = (input: string): boolean => {
-  let stack: string[] = [];
-  let map = {
+  const stack: string[] = [];
+  const map = {
     ")": "(",
     "]": "[",
     "}": "{",
   };
 
-  for (let char of input) {
+  for (const char of input) {
     if (["(", "[", "{"].includes(char)) {
       stack.push(char);
     } else {

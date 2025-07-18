@@ -26,5 +26,4 @@ const SideBar = ({ selectedChallenge, setSelectedChallenge }: TProps) => {
         </div>
     )
 }
-
 export default SideBar

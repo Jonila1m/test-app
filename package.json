@@ -10,7 +10,10 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@react-ck/accordion": "^2.0.0",
+    "@tanstack/react-query": "^5.82.0",
     "react": "^19.1.0",
+    "react-code-blocks": "^0.1.6",
     "react-dom": "^19.1.0"
   },
   "devDependencies": {
