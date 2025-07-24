@@ -2,7 +2,7 @@ import { useState } from "react"
 import { TChallenge, challenges } from "./data/challenges"
 import SideBar from './components/SideBar/SideBar'
 import ChallengeDetails from "./components/ChallengeDetails"
-
+import './Content.css'
 const Content = () => {
     const [selectedChallenge, setSelectedChallenge] = useState<TChallenge>(challenges[0])
     return (
@@ -15,10 +15,9 @@ const Content = () => {
                 setSelectedChallenge={setSelectedChallenge}
             />
 
-            <main style={{ paddingLeft: '20rem', color: 'white', margin: ' 0 2rem' }}>
+            <main>
                 <h2>{selectedChallenge.title}</h2>
-                <p style={{ fontWeight: 'lighter' }}>{selectedChallenge.description}</p>
-                <p>Test Code</p>
+                <p>{selectedChallenge.description}</p>
                 <ChallengeDetails selectedChallenge={selectedChallenge} />
             </main>
         </div >
