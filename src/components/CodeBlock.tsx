@@ -1,5 +1,4 @@
 import { useQuery } from '@tanstack/react-query'
-import { CodeBlock as RCodeBlock, dracula } from 'react-code-blocks'
 import './CodeBlock.css'
 
 
@@ -16,7 +15,7 @@ const CodeBlock = ({ solutionPath, testPath }: TProps) => {
 
     const { data: testCode } = useQuery(
         {
-            queryKey: ['challenge', testPath],
+            queryKey: ['test', testPath],
             queryFn: async () => {
                 const response = await fetch(`/public/tests/${testPath}`)
                 const raw = await response.text()
@@ -24,6 +23,7 @@ const CodeBlock = ({ solutionPath, testPath }: TProps) => {
             }
         }
     )
+
     const { data: solutionCode } = useQuery(
         {
             queryKey: ['solution', solutionPath],
@@ -35,23 +35,38 @@ const CodeBlock = ({ solutionPath, testPath }: TProps) => {
         }
 
     )
+
+    const renderCode = (code: string | undefined) => {
+        if (!code) return null;
+
+        return (
+            <ol className="code-block">
+                {code.split('\n').map((line, idx) => (
+                    <li key={idx}>
+                        <pre>{line}</pre>
+                    </li>
+                ))}
+            </ol>
+        )
+    }
+
     return (
         <div className="wrapper">
             <section className="code">
                 <h3>Test:</h3>
                 <div className="scroll">
-                    <RCodeBlock text={testCode} language="tsx" theme={dracula} />
+                    {renderCode(testCode)}
                 </div>
             </section>
 
             <section className="code">
                 <h3>Solution:</h3>
-                <div className="scroll">
-                    <RCodeBlock text={solutionCode} language="tsx" theme={dracula} />
+                <div className="scroll" >
+                    {renderCode(solutionCode)}
                 </div>
             </section>
         </div>
     )
+
 }
 export default CodeBlock
-
