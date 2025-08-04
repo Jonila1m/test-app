@@ -3,6 +3,7 @@ import { TChallenge, challenges } from "./data/challenges"
 import SideBar from './components/SideBar/SideBar'
 import ChallengeDetails from "./components/ChallengeDetails"
 import './Content.css'
+
 const Content = () => {
     const [selectedChallenge, setSelectedChallenge] = useState<TChallenge>(challenges[0])
     return (

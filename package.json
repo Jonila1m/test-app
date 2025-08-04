@@ -7,12 +7,14 @@
     "dev": "vite",
     "build": "tsc -b && vite build",
     "lint": "eslint .",
-    "preview": "vite preview"
+    "preview": "vite preview",
+     "test:e2e": "playwright test --ui"
   },
   "dependencies": {
     "@react-ck/accordion": "^2.0.0",
     "@szhsin/react-accordion": "^1.4.1",
     "@tanstack/react-query": "^5.82.0",
+    "nock": "^14.0.7",
     "react": "^19.1.0",
     "react-accordion-component": "^1.0.10",
     "react-code-blocks": "^0.1.6",
@@ -20,15 +22,24 @@
   },
   "devDependencies": {
     "@eslint/js": "^9.29.0",
+    "@playwright/test": "^1.54.1",
+    "@testing-library/dom": "^10.4.1",
+    "@testing-library/jest-dom": "^6.6.4",
+    "@testing-library/react": "^16.3.0",
+    "@testing-library/user-event": "^14.6.1",
     "@types/react": "^19.1.8",
     "@types/react-dom": "^19.1.6",
     "@vitejs/plugin-react": "^4.5.2",
+    "@vitest/ui": "^3.2.4",
     "eslint": "^9.29.0",
     "eslint-plugin-react-hooks": "^5.2.0",
     "eslint-plugin-react-refresh": "^0.4.20",
+    "global-jsdom": "^26.0.0",
     "globals": "^16.2.0",
+    "jsdom": "^26.1.0",
     "typescript": "~5.8.3",
     "typescript-eslint": "^8.34.1",
-    "vite": "^7.0.0"
+    "vite": "^7.0.0",
+    "vitest": "^3.2.4"
   }
 }

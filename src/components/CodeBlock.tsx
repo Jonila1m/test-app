@@ -1,7 +1,6 @@
 import { useQuery } from '@tanstack/react-query'
 import './CodeBlock.css'
 
-
 export type TProps = {
     solutionPath: string;
     testPath: string;
@@ -10,14 +9,13 @@ export type TProps = {
 const sourceMap = (raw: string): string =>
     raw.replace(/\/\/# sourceMappingURL=.*$/gm, '')
 
-
 const CodeBlock = ({ solutionPath, testPath }: TProps) => {
 
     const { data: testCode } = useQuery(
         {
             queryKey: ['test', testPath],
             queryFn: async () => {
-                const response = await fetch(`/public/tests/${testPath}`)
+                const response = await fetch(`http://localhost:5173/public/tests/${testPath}`)
                 const raw = await response.text()
                 return sourceMap(raw)
             }
@@ -28,7 +26,7 @@ const CodeBlock = ({ solutionPath, testPath }: TProps) => {
         {
             queryKey: ['solution', solutionPath],
             queryFn: async () => {
-                const response = await fetch(`/public/tests/${solutionPath}`)
+                const response = await fetch(`http://localhost:5173/public/tests/${solutionPath}`)
                 const raw = await response.text()
                 return sourceMap(raw)
             }
@@ -41,8 +39,8 @@ const CodeBlock = ({ solutionPath, testPath }: TProps) => {
 
         return (
             <ol className="code-block">
-                {code.split('\n').map((line, idx) => (
-                    <li key={idx}>
+                {code.split('\n').map((line, index) => (
+                    <li key={index}>
                         <pre>{line}</pre>
                     </li>
                 ))}
